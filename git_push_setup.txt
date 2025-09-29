@@ -1,0 +1,39 @@
+REM =============================================
+REM GitHub Push Setup - Start to End
+REM =============================================
+
+REM Step 0: Navigate to Desktop (or desired folder)
+cd %USERPROFILE%\Desktop
+
+REM Step 1: Create Project Folder and Enter
+mkdir git-prac3
+cd git-prac3
+
+REM Step 2: Configure Git identity
+git config --global user.name "Supriya"
+git config --global user.email "supriya@example.com"
+
+REM Step 3: Create Python file
+echo print("Hello from main branch") > app.py
+
+REM Step 4: Initialize Git
+git init
+
+REM Step 5: Stage and commit files
+git add .
+git commit -m "Initial commit with basic app.py"
+
+REM Step 6: Rename branch to main
+git branch -M main
+
+REM Step 7: Connect to GitHub
+REM Remove old remote if exists
+git remote remove origin 2>nul
+git remote add origin https://github.com/supriya143sss/git-prac3.git
+
+REM Step 8: Push to GitHub
+git push -u origin main --force
+
+REM =============================================
+REM End of Script
+REM =============================================
